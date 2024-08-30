@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript palindrome task</title>
+</head>
+<body>
+   <script>
+    function processSentence() {
+        let sentence = prompt("Enter a sentence:");
+        let words = sentence.split(" "); // Split the sentence into words
+        let result = words.map(word => {
+            if (isPalindrome(word)) {
+                return word; // If it's a palindrome, leave it unchanged
+            } else {
+                return reverseWord(word); // If it's not, reverse the word
+            }
+        });
+        return result.join(" "); // Join the modified words back into a sentence
+    }
+
+    function isPalindrome(word) {
+        let reversed = word.split("").reverse().join("");
+        return word === reversed; // Check if the word is the same forwards and backwards
+    }
+
+    function reverseWord(word) {
+        return word.split("").reverse().join(""); // Reverse the word
+    }
+
+    // Call the function and display the result
+    console.log(processSentence());
+</script>
+</body>
+</html>
